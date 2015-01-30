@@ -4,4 +4,4 @@ This project provides an example implementation of a web service that's compatib
 implements two services:
 
 * ```getRandom``` : returns a random number between 1-100
-* ```helloService``` : returns a hello message for the given name
+* ```helloService``` : returns a hello message with the given name
