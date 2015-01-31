@@ -1,0 +1,23 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:id="http://x-road.eu/xsd/identifiers" xmlns:sdsb="http://x-road.eu/xsd/sdsb.xsd">
+    <SOAP-ENV:Header>
+        <sdsb:client id:objectType="SUBSYSTEM">
+            <id:sdsbInstance>FI_TEST</id:sdsbInstance>
+            <id:memberClass>GOV</id:memberClass>
+            <id:memberCode>1234567-8</id:memberCode>
+            <id:subsystemCode>TestClient</id:subsystemCode>
+        </sdsb:client>
+        <sdsb:service id:objectType="SERVICE">
+            <id:sdsbInstance>FI_TEST</id:sdsbInstance>
+            <id:memberClass>GOV</id:memberClass>
+            <id:memberCode>9876543-1</id:memberCode>
+            <id:subsystemCode>DemoService</id:subsystemCode>
+            <id:serviceCode>getRandom</id:serviceCode>
+            <id:serviceVersion>v1</id:serviceVersion>
+        </sdsb:service>
+        <sdsb:userId>EE1234567890</sdsb:userId>
+        <sdsb:id>ID11234</sdsb:id>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <ns1:getRandom xmlns:ns1="http://test.x-road.fi/producer"/>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

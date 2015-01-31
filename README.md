@@ -5,3 +5,25 @@ implements two services:
 
 * ```getRandom``` : returns a random number between 1-100
 * ```helloService``` : returns a hello message with the given name
+
+### Software Requirements
+
+* Java 6 or later
+* Tomcat 6 or later
+
+### Installation
+
+* Download the ```adapter-example-0.0.1.war``` file.
+* Rename the file to ```Adapter.war```.
+* Copy the file ```tomcat.home/webapps``` folder.
+* Start/restart Tomcat. The application is now accessible at:
+
+```
+http://localhost:8080/Adapter/Endpoint
+```
+
+The WSDL description is accessible at:
+
+```
+http://localhost:8080/Adapter/Endpoint?wsdl
+```
