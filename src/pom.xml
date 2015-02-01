@@ -5,7 +5,15 @@
     <groupId>com.pkrete.xrd4j.tools</groupId>
     <artifactId>example-adapter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>XRd4J :: Tools :: Example Adapter</name>
+    <name>Example Adapter for X-Road version 6</name>
+    <inceptionYear>2015</inceptionYear>
+    <description>
+        This project provides an example implementation of a web service 
+        that's compatible with X-Road version 6. The implementation is based 
+        on XRd4J library. The service contains a single servlet that implements 
+        two services
+    </description>
+    <url>https://github.com/petkivim/x-road-adapter-example</url>
     <packaging>war</packaging>
     <properties>
         <slf4j.version>1.7.7</slf4j.version>
@@ -18,12 +26,12 @@
         <dependency>
             <groupId>com.pkrete.xrd4j</groupId>
             <artifactId>common</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.pkrete.xrd4j</groupId>
             <artifactId>server</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -65,6 +73,11 @@
             <url>http://www.opensource.org/licenses/mit-license.php</url>
         </license>
     </licenses>
+    <scm>
+        <connection>scm:git:git@github.com:petkivim/x-road-adapter-example.git</connection>
+        <developerConnection>scm:git:git@github.com:petkivim/x-road-adapter-example.git</developerConnection>
+        <url>git@github.com:petkivim/x-road-adapter-example.git</url>
+    </scm>
     <developers>
         <developer>
             <id>petkivim</id>
