@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xrd="http://x-road.ee/xsd/x-road.xsd" xmlns:tns="http://vrk-test.x-road.fi/producer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getRandom" targetNamespace="http://vrk-test.x-road.fi/producer">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xrd="http://x-road.ee/xsd/x-road.xsd" xmlns:tns="http://test.x-road.fi/producer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="getRandom" targetNamespace="http://test.x-road.fi/producer">
     <wsdl:types>
-        <xsd:schema targetNamespace="http://vrk-test.x-road.fi/producer">
+        <xsd:schema targetNamespace="http://test.x-road.fi/producer">
             <xsd:import namespace="http://x-road.ee/xsd/x-road.xsd" schemaLocation="http://x-road.ee/xsd/x-road.xsd"/>
             <xsd:element name="getRandom" nillable="true" />
             <xsd:element name="getRandomResponse">
@@ -159,10 +159,10 @@
         </wsdl:operation>
     </wsdl:binding>
   
-    <wsdl:service name="vrk-testService">
+    <wsdl:service name="testService">
         <wsdl:port binding="tns:sdsbBinding" name="sdsbServicePort">
             <soap:address location="http://193.166.25.15:8080/XRdAdapter/Endpoint"/>
-            <xrd:address producer="vrk-test"/>
+            <xrd:address producer="test"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
