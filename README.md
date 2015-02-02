@@ -27,3 +27,23 @@ The WSDL description is accessible at:
 ```
 http://localhost:8080/Adapter/Endpoint?wsdl
 ```
+
+### Usage
+
+Calling the service after installation when Tomcat is running.
+
+#### getRandom
+
+[SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomRequest.xml) can be found in the ```examples``` folder.
+
+```
+curl -d @getRandom.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/Adapter/Endpoint
+```
+
+#### helloService
+
+[SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceRequest.xml) can be found in the ```examples``` folder.
+
+```
+curl -d @helloService.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/Adapter/Endpoint
+```
