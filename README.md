@@ -40,6 +40,8 @@ Calling the service after installation when Tomcat is running.
 curl -d @getRandom.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/Adapter/Endpoint
 ```
 
+Example [SOAP response](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomResponse.xml) can be found in the ```examples``` folder.
+
 #### helloService
 
 [SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceRequest.xml) can be found in the ```examples``` folder.
@@ -47,3 +49,5 @@ curl -d @getRandom.xml --header "Content-Type: text/xml" -X POST http://localhos
 ```
 curl -d @helloService.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/Adapter/Endpoint
 ```
+
+Example [SOAP response](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceResponse.xml) can be found in the ```examples``` folder.
