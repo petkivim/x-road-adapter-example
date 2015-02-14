@@ -11,6 +11,10 @@ implements two services:
 * Java 6 or later
 * Tomcat 6 or later
 
+### Development Environment
+
+Setting up development environment is explained in [wiki](https://github.com/petkivim/x-road-adapter-example/wiki/Setting-up-Development-Environment).
+
 ### Installation
 
 * Download the ```adapter-example-0.0.1.war``` file.
