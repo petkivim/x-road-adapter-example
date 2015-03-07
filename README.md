@@ -17,19 +17,24 @@ Setting up development environment is explained in [wiki](https://github.com/pet
 
 ### Installation
 
-* Download the ```adapter-example-0.0.1.war``` file.
-* Rename the file to ```Adapter.war```.
+* Download the ```example-adapter-0.0.2.war``` file.
 * Copy the file ```tomcat.home/webapps``` folder.
 * Start/restart Tomcat. The application is now accessible at:
 
 ```
-http://localhost:8080/Adapter/Endpoint
+http://localhost:8080/example-adapter-0.0.2/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/Adapter/Endpoint?wsdl
+http://localhost:8080/example-adapter-0.0.2/Endpoint?wsdl
+```
+
+**N.B.** If you want to connect the services to X-Road Security Server you must update your server's IP address / host name to the WSDL file. Look for the below line and replace the default URL with your server's IP / host name.
+
+```
+<soap:address location="http://localhost:8080/example-adapter-0.0.2/Endpoint" />
 ```
 
 ### Usage
