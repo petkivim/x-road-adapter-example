@@ -10,25 +10,6 @@
         <!-- Schema for identifiers (reduced) -->
         <xsd:schema elementFormDefault="qualified"
                     targetNamespace="http://x-road.eu/xsd/identifiers" xmlns="http://x-road.eu/xsd/identifiers">
-            <xsd:complexType name="SdsbIdentifierType">
-                <xsd:annotation>
-                    <xsd:documentation>Globally unique identifier in the
-                        SDSB system. Identifier consists of object type
-                        specifier and list of hierarchical codes
-                        (starting with code that identifiers the SDSB
-                        instance).
-                    </xsd:documentation>
-                </xsd:annotation>
-                <xsd:sequence>
-                    <xsd:element minOccurs="0" ref="sdsbInstance" />
-                    <xsd:element minOccurs="0" ref="memberClass" />
-                    <xsd:element minOccurs="0" ref="memberCode" />
-                    <xsd:element minOccurs="0" ref="subsystemCode" />
-                    <xsd:element minOccurs="0" ref="serviceCode" />
-                    <xsd:element minOccurs="0" ref="serviceVersion" />
-                </xsd:sequence>
-                <xsd:attribute ref="objectType" use="required" />
-            </xsd:complexType>
             <xsd:simpleType name="SdsbObjectType">
                 <xsd:annotation>
                     <xsd:documentation>Enumeration for SDSB identifier
@@ -118,7 +99,6 @@
             <xsd:element name="service" type="id:SdsbServiceIdentifierType" />
             <xsd:element name="userId" type="xsd:string" />
             <xsd:element name="id" type="xsd:string" />
-            <!--<xsd:element name="async" type="xsd:boolean" />-->
         </xsd:schema>	     
 			     
         <!-- Schema for requests (reduced) -->
@@ -196,7 +176,6 @@
         <wsdl:part name="service" element="sdsb:service" />
         <wsdl:part name="userId" element="sdsb:userId" />
         <wsdl:part name="id" element="sdsb:id" />
-        <!--<wsdl:part name="async" element="sdsb:async" />-->
     </wsdl:message>
     
     <wsdl:message name="getRandom">
@@ -234,7 +213,6 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
-                <!--<soap:header message="tns:requestheader" part="async" use="literal"/>-->
             </wsdl:input>
             <wsdl:output>
                 <soap:body parts="body" use="literal"/>
@@ -242,7 +220,6 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
-                <!--<soap:header message="tns:requestheader" part="async" use="literal"/>-->
             </wsdl:output>
         </wsdl:operation>
 
@@ -255,7 +232,6 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
-                <!--<soap:header message="tns:requestheader" part="async" use="literal"/>-->
             </wsdl:input>
             <wsdl:output>
                 <soap:body parts="body" use="literal"/>
@@ -263,7 +239,6 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
-                <!--<soap:header message="tns:requestheader" part="async" use="literal"/>-->
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
