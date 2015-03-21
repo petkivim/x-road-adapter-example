@@ -3,7 +3,6 @@
                   xmlns:tns="http://test.x-road.fi/producer" 
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:sdsb="http://x-road.eu/xsd/sdsb.xsd" 
-                  xmlns:xrd="http://x-road.ee/xsd/x-road.xsd"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   xmlns:id="http://x-road.eu/xsd/identifiers"
                   name="testService" targetNamespace="http://test.x-road.fi/producer">
