@@ -143,13 +143,13 @@
     </reporting>
     <profiles>
         <profile >
-            <id>xroad-6.3</id>
+            <id>xroad-6.1</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <xrd4j.version>0.0.3</xrd4j.version>
-                <wsdl.path>example.xroad-6.3.wsdl</wsdl.path>
+                <wsdl.path>example.xroad-6.1.wsdl</wsdl.path>
             </properties>
         </profile>
         <profile >
