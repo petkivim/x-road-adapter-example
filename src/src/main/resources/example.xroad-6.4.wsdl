@@ -1,12 +1,11 @@
-
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://vrk-test.x-road.fi/producer"
+                  xmlns:tns="http://test.x-road.fi/producer"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:xrd="http://x-road.eu/xsd/xroad.xsd"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                   xmlns:id="http://x-road.eu/xsd/identifiers"
-                  name="testService" targetNamespace="http://vrk-test.x-road.fi/producer">
+                  name="testService" targetNamespace="http://test.x-road.fi/producer">
     <wsdl:types>
         <!-- Schema for identifiers (reduced) -->
         <xsd:schema elementFormDefault="qualified"
@@ -49,14 +48,14 @@
             <xsd:element name="subsystemCode" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Code that uniquely identifies a
-                        subsystem of given SDSB member.
+                        subsystem of given X-Road member.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="serviceCode" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Code that uniquely identifies a
-                        service offered by given SDSB member or
+                        service offered by given X-Road member or
                         subsystem.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -103,7 +102,7 @@
         </xsd:schema>
 
         <!-- Schema for requests (reduced) -->
-        <xsd:schema targetNamespace="http://vrk-test.x-road.fi/producer">
+        <xsd:schema targetNamespace="http://test.x-road.fi/producer">
             <xsd:element name="getRandom" nillable="true" />
             <xsd:element name="getRandomResponse">
                 <xsd:complexType>
