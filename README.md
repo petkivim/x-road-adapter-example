@@ -55,24 +55,20 @@ Calling the service after installation when Tomcat is running.
 
 #### getRandom
 
-[SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomRequest.xml) can be found in the ```examples``` folder.
+SOAP request ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomRequest.xml), [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/getRandomRequest.xml)) can be found in the ```examples``` folder.
 
 ```
 curl -d @getRandom.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/Adapter/Endpoint
 ```
 
-Example [SOAP response](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomResponse.xml) can be found in the ```examples``` folder.
-
-[6.4 SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/getRandomRequest.xml)
+Example SOAP response ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomResponse.xml), [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/getRandomResponse.xml)) can be found in the ```examples``` folder.
 
 #### helloService
 
-[SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceRequest.xml) can be found in the ```examples``` folder.
+SOAP request ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceRequest.xml),  [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/helloServiceRequest.xml)) can be found in the ```examples``` folder.
 
 ```
 curl -d @helloService.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/Adapter/Endpoint
 ```
 
-Example [SOAP response](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceResponse.xml) can be found in the ```examples``` folder.
-
-[6.4 SOAP request](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/helloServiceRequest.xml)
+Example SOAP response ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceResponse.xml), [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/helloServiceResponse.xml)) can be found in the ```examples``` folder.
