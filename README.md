@@ -6,7 +6,7 @@ implements two services:
 * ```getRandom``` : returns a random number between 1-100
 * ```helloService``` : returns a hello message with the given name
 
-Example has support for X-Road version 6.3 and 6.4 message formats.
+Example has support for X-Road version 6.1 and 6.4 message formats.
 
 ### Software Requirements
 
@@ -19,12 +19,12 @@ Setting up development environment is explained in [wiki](https://github.com/pet
 
 ### X-Road v 6.4 Messages
 
-By default the example works with X-Road 6.3 messages. Use maven profile "xroad-6.4" to build the example so that it uses X-Road 6.4 messages:
+By default the example works with X-Road 6.1 messages. Use maven profile "xroad-6.4" to build the example so that it uses X-Road 6.4 messages:
 
 ```
 mvn clean install -Pxroad-6.4
 ```
-Differences are pretty small, e.g. "sdsbInstance" in 6.3 is called "xRoadInstance" in 6.4.
+Differences are pretty small, e.g. "sdsbInstance" in 6.1 is called "xRoadInstance" in 6.4.
 
 
 ### Installation
