@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://test.x-road.fi/producer" 
-				  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-				  xmlns:sdsb="http://x-road.eu/xsd/sdsb.xsd" 
-				  xmlns:xrd="http://x-road.ee/xsd/x-road.xsd"
-				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-				  xmlns:id="http://x-road.eu/xsd/identifiers"
-				  name="testService" targetNamespace="http://test.x-road.fi/producer">
+                  xmlns:tns="http://test.x-road.fi/producer"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xrd="http://x-road.eu/xsd/xroad.xsd"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:id="http://x-road.eu/xsd/identifiers"
+                  name="testService" targetNamespace="http://test.x-road.fi/producer">
     <wsdl:types>
         <!-- Schema for identifiers (reduced) -->
         <xsd:schema elementFormDefault="qualified"
-                    targetNamespace="http://x-road.eu/xsd/identifiers" xmlns="http://x-road.eu/xsd/identifiers">
-            <xsd:simpleType name="SdsbObjectType">
+                    targetNamespace="http://x-road.eu/xsd/identifiers"
+                    xmlns="http://x-road.eu/xsd/identifiers">
+            <xsd:simpleType name="XRoadObjectType">
                 <xsd:annotation>
-                    <xsd:documentation>Enumeration for SDSB identifier
+                    <xsd:documentation>Enumeration for X-Road identifier
                         types that can be used in requests.
                     </xsd:documentation>
                 </xsd:annotation>
                 <xsd:restriction base="xsd:string">
-                    <xsd:enumeration value="MEMBER" />					
+                    <xsd:enumeration value="MEMBER" />
                     <xsd:enumeration value="SUBSYSTEM" />
-                    <xsd:enumeration value="SERVICE" />					
+                    <xsd:enumeration value="SERVICE" />
                 </xsd:restriction>
             </xsd:simpleType>
-            <xsd:element name="sdsbInstance" type="xsd:string">
+            <xsd:element name="xRoadInstance" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:documentation>Identifies the SDSB instance.
+                    <xsd:documentation>Identifies the X-Road instance.
                         This field is applicable to all identifier
                         types.
                     </xsd:documentation>
@@ -48,14 +48,14 @@
             <xsd:element name="subsystemCode" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Code that uniquely identifies a
-                        subsystem of given SDSB member.
+                        subsystem of given X-Road member.
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="serviceCode" type="xsd:string">
                 <xsd:annotation>
                     <xsd:documentation>Code that uniquely identifies a
-                        service offered by given SDSB member or
+                        service offered by given X-Road member or
                         subsystem.
                     </xsd:documentation>
                 </xsd:annotation>
@@ -66,19 +66,19 @@
                     </xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:attribute name="objectType" type="SdsbObjectType" />
-            <xsd:complexType name="SdsbClientIdentifierType">
+            <xsd:attribute name="objectType" type="XRoadObjectType" />
+            <xsd:complexType name="XRoadClientIdentifierType">
                 <xsd:sequence>
-                    <xsd:element ref="sdsbInstance" />
+                    <xsd:element ref="xRoadInstance" />
                     <xsd:element ref="memberClass" />
                     <xsd:element ref="memberCode" />
                     <xsd:element minOccurs="0" ref="subsystemCode" />
                 </xsd:sequence>
                 <xsd:attribute ref="objectType" use="required" />
             </xsd:complexType>
-            <xsd:complexType name="SdsbServiceIdentifierType">
+            <xsd:complexType name="XRoadServiceIdentifierType">
                 <xsd:sequence>
-                    <xsd:element ref="sdsbInstance" />
+                    <xsd:element ref="xRoadInstance" />
                     <xsd:element ref="memberClass" />
                     <xsd:element ref="memberCode" />
                     <xsd:element minOccurs="0" ref="subsystemCode" />
@@ -91,17 +91,18 @@
 
         <!-- Schema for request headers -->
         <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
-					targetNamespace="http://x-road.eu/xsd/sdsb.xsd"
-					elementFormDefault="qualified">
-	    							     
-            <xsd:element name="client" type="id:SdsbClientIdentifierType" />
-            <xsd:element name="service" type="id:SdsbServiceIdentifierType" />
+                    targetNamespace="http://x-road.eu/xsd/xroad.xsd"
+                    elementFormDefault="qualified">
+
+            <xsd:element name="client" type="id:XRoadClientIdentifierType" />
+            <xsd:element name="service" type="id:XRoadServiceIdentifierType" />
             <xsd:element name="userId" type="xsd:string" />
             <xsd:element name="id" type="xsd:string" />
-        </xsd:schema>	     
-			     
+            <xsd:element name="protocolVersion" type="xsd:string" />
+        </xsd:schema>
+
         <!-- Schema for requests (reduced) -->
-        <xsd:schema targetNamespace="http://test.x-road.fi/producer">            
+        <xsd:schema targetNamespace="http://test.x-road.fi/producer">
             <xsd:element name="getRandom" nillable="true" />
             <xsd:element name="getRandomResponse">
                 <xsd:complexType>
@@ -121,7 +122,7 @@
                         </xsd:element>
                     </xsd:sequence>
                 </xsd:complexType>
-            </xsd:element>	
+            </xsd:element>
             <xsd:element name="helloService">
                 <xsd:complexType>
                     <xsd:sequence>
@@ -166,17 +167,18 @@
                         </xsd:element>
                     </xsd:sequence>
                 </xsd:complexType>
-            </xsd:element>   
+            </xsd:element>
         </xsd:schema>
     </wsdl:types>
 
     <wsdl:message name="requestheader">
-        <wsdl:part name="client" element="sdsb:client" />
-        <wsdl:part name="service" element="sdsb:service" />
-        <wsdl:part name="userId" element="sdsb:userId" />
-        <wsdl:part name="id" element="sdsb:id" />
+        <wsdl:part name="client" element="xrd:client" />
+        <wsdl:part name="service" element="xrd:service" />
+        <wsdl:part name="userId" element="xrd:userId" />
+        <wsdl:part name="id" element="xrd:id" />
+        <wsdl:part name="protocolVersion" element="xrd:protocolVersion" />
     </wsdl:message>
-    
+
     <wsdl:message name="getRandom">
         <wsdl:part name="body" element="tns:getRandom"/>
     </wsdl:message>
@@ -189,7 +191,7 @@
     <wsdl:message name="helloServiceResponse">
         <wsdl:part name="body" element="tns:helloServiceResponse"/>
     </wsdl:message>
-  
+
     <wsdl:portType name="testServicePortType">
         <wsdl:operation name="getRandom">
             <wsdl:input message="tns:getRandom"/>
@@ -200,18 +202,19 @@
             <wsdl:output message="tns:helloServiceResponse"/>
         </wsdl:operation>
     </wsdl:portType>
-  
+
     <wsdl:binding name="testServiceBinding" type="tns:testServicePortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
         <wsdl:operation name="getRandom">
-        <soap:operation soapAction="" style="document" />
-	    <id:version>v1</id:version>
+            <soap:operation soapAction="" style="document" />
+            <id:version>v1</id:version>
             <wsdl:input>
                 <soap:body parts="body" use="literal"/>
                 <soap:header message="tns:requestheader" part="client" use="literal"/>
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:input>
             <wsdl:output>
                 <soap:body parts="body" use="literal"/>
@@ -219,18 +222,20 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
 
         <wsdl:operation name="helloService">
-        <soap:operation soapAction="" style="document" />
-	    <id:version>v1</id:version>
+            <soap:operation soapAction="" style="document" />
+            <id:version>v1</id:version>
             <wsdl:input>
                 <soap:body parts="body" use="literal"/>
                 <soap:header message="tns:requestheader" part="client" use="literal"/>
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:input>
             <wsdl:output>
                 <soap:body parts="body" use="literal"/>
@@ -238,12 +243,13 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
     </wsdl:binding>
     <wsdl:service name="testService">
         <wsdl:port binding="tns:testServiceBinding" name="testServicePort">
-            <soap:address location="http://localhost:8080/Adapter/Endpoint" />
+            <soap:address location="http://localhost:8080/Adapter/Endpoint"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
