@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pkrete.xrd4j.tools</groupId>
     <artifactId>example-adapter</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>Example Adapter for X-Road version 6</name>
     <inceptionYear>2015</inceptionYear>
     <description>
@@ -144,9 +144,6 @@
     <profiles>
         <profile >
             <id>xroad-6.1</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <xrd4j.version>0.0.3</xrd4j.version>
                 <wsdl.path>example.xroad-6.1.wsdl</wsdl.path>
@@ -154,6 +151,9 @@
         </profile>
         <profile >
             <id>xroad-6.4</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <xrd4j.version>0.0.6</xrd4j.version>
                 <wsdl.path>example.xroad-6.4.wsdl</wsdl.path>
