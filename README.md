@@ -17,15 +17,16 @@ Example has support for X-Road version 6.1 and 6.4 message formats.
 
 Setting up development environment is explained in [wiki](https://github.com/petkivim/x-road-adapter-example/wiki/Setting-up-Development-Environment).
 
-### X-Road v 6.4 Messages
+### X-Road v 6.1 Messages
 
-By default the example works with X-Road 6.1 messages. Use maven profile "xroad-6.4" to build the example so that it uses X-Road 6.4 messages:
+By default the example works with X-Road 6.4 messages. Use maven profile "xroad-6.1" to build the example so that it uses X-Road 6.1 messages:
 
 ```
-mvn clean install -Pxroad-6.4
+mvn clean install -Pxroad-6.1
 ```
 Differences are pretty small, e.g. "sdsbInstance" in 6.1 is called "xRoadInstance" in 6.4.
 
+In addition, ```wsdl.path``` property's value (located in ```src/main/resources/xrd-servlet.properties```) must be changed to ```example.xroad-6.1.wsdl```.
 
 ### Installation
 
