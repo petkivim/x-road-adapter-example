@@ -8,9 +8,9 @@
     <name>Example Adapter for X-Road version 6</name>
     <inceptionYear>2015</inceptionYear>
     <description>
-        This project provides an example implementation of a web service 
-        that's compatible with X-Road version 6. The implementation is based 
-        on XRd4J library. The service contains a single servlet that implements 
+        This project provides an example implementation of a web service
+        that's compatible with X-Road version 6. The implementation is based
+        on XRd4J library. The service contains a single servlet that implements
         two services
     </description>
     <url>https://github.com/petkivim/x-road-adapter-example</url>
@@ -20,18 +20,18 @@
         <log4j.version>1.2.16</log4j.version>
         <jdk.version>1.7</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding> 
+        <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
     </properties>
     <dependencies>
         <dependency>
             <groupId>com.pkrete.xrd4j</groupId>
             <artifactId>common</artifactId>
-            <version>0.0.3</version>
+            <version>${xrd4j.version}</version>
         </dependency>
         <dependency>
             <groupId>com.pkrete.xrd4j</groupId>
             <artifactId>server</artifactId>
-            <version>0.0.3</version>
+            <version>${xrd4j.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -59,7 +59,7 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-		
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -81,7 +81,7 @@
     <developers>
         <developer>
             <id>petkivim</id>
-            <name>Petteri Kivimäki</name>            
+            <name>Petteri Kivimäki</name>
             <roles>
                 <role>architect</role>
                 <role>developer</role>
@@ -98,7 +98,7 @@
                 <configuration>
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
                 </configuration>
-            </plugin>         
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -141,4 +141,23 @@
             </plugin>
         </plugins>
     </reporting>
+    <profiles>
+        <profile >
+            <id>xroad-6.1</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <xrd4j.version>0.0.3</xrd4j.version>
+                <wsdl.path>example.xroad-6.1.wsdl</wsdl.path>
+            </properties>
+        </profile>
+        <profile >
+            <id>xroad-6.4</id>
+            <properties>
+                <xrd4j.version>0.0.6</xrd4j.version>
+                <wsdl.path>example.xroad-6.4.wsdl</wsdl.path>
+            </properties>
+        </profile>
+    </profiles>
 </project>
