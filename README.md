@@ -30,9 +30,20 @@ In addition, ```wsdl.path``` property's value (located in ```src/main/resources/
 
 ### Installation
 
+#### JAR
+
+* Build the project and produce ```example-adapter-0.0.4-SNAPSHOT.jar``` file.
+* Run the application: ```$ java -jar example-adapter-0.0.4-SNAPSHOT.jar```.
+
+#### WAR
+
 * Build the project and produce ```example-adapter-0.0.4-SNAPSHOT.war``` file.
 * Copy the file ```tomcat.home/webapps``` folder.
-* Start/restart Tomcat. The application is now accessible at:
+* Start/restart Tomcat.
+
+### Access the application
+
+After installation (both JAR and WAR) the application is accessible at:
 
 ```
 http://localhost:8080/example-adapter-0.0.4-SNAPSHOT/Endpoint
