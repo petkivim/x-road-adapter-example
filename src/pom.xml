@@ -120,23 +120,23 @@
                             <goal>exec-war</goal>
                         </goals>
                         <phase>package</phase>
-                        <configuration>
-                            <path>/${artifactId}-${version}</path>
-                            <enableNaming>false</enableNaming>
-                            <finalName>x-road-example-adapter.jar</finalName>
-                            <charset>utf-8</charset>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <path>/${project.artifactId}-${project.version}</path>
+                    <enableNaming>false</enableNaming>
+                    <finalName>${project.artifactId}-${project.version}.jar</finalName>
+                    <charset>utf-8</charset>
+                </configuration>
             </plugin>
-    </plugins>
-    <defaultGoal>package</defaultGoal>
-    <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-            <filtering>true</filtering>
-        </resource>
-    </resources>
+        </plugins>
+        <defaultGoal>package</defaultGoal>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
     <repositories>
         <repository>
