@@ -8,6 +8,20 @@ implements two services:
 
 Example has support for X-Road version 6.1 and 6.4 message formats.
 
+### Try It Out
+
+The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-adapter-example/releases/download/example-adapter-0.0.3/example-adapter-0.0.3.jar) the executable jar version (```example-adapter-0.0.3.jar```) and run it: ```java -jar example-adapter-0.0.3.jar```. The application is accessible at:
+
+```
+http://localhost:8080/example-adapter-0.0.3/Endpoint
+```
+
+The WSDL description is accessible at:
+
+```
+http://localhost:8080/example-adapter-0.0.3/Endpoint?wsdl
+```
+
 ### Software Requirements
 
 * Java 6 or later
