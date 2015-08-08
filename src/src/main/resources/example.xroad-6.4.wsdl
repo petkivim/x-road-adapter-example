@@ -176,6 +176,7 @@
         <wsdl:part name="service" element="xrd:service" />
         <wsdl:part name="userId" element="xrd:userId" />
         <wsdl:part name="id" element="xrd:id" />
+        <wsdl:part name="issue" element="xrd:issue"/>
         <wsdl:part name="protocolVersion" element="xrd:protocolVersion" />
     </wsdl:message>
 
@@ -214,6 +215,7 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="issue" use="literal"/>
                 <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:input>
             <wsdl:output>
@@ -222,6 +224,7 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="issue" use="literal"/>
                 <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
@@ -235,6 +238,7 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="issue" use="literal"/>
                 <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:input>
             <wsdl:output>
@@ -243,6 +247,7 @@
                 <soap:header message="tns:requestheader" part="service" use="literal"/>
                 <soap:header message="tns:requestheader" part="userId" use="literal"/>
                 <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="issue" use="literal"/>
                 <soap:header message="tns:requestheader" part="protocolVersion" use="literal"/>
             </wsdl:output>
         </wsdl:operation>
