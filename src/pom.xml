@@ -109,14 +109,34 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-        </plugins>
-        <defaultGoal>package</defaultGoal>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <id>tomcat-run</id>
+                        <goals>
+                            <goal>exec-war</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <path>/${artifactId}-${version}</path>
+                            <enableNaming>false</enableNaming>
+                            <finalName>x-road-example-adapter.jar</finalName>
+                            <charset>utf-8</charset>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+    </plugins>
+    <defaultGoal>package</defaultGoal>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
     </build>
     <repositories>
         <repository>
