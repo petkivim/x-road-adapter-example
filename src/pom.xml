@@ -129,6 +129,27 @@
                     <charset>utf-8</charset>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.2</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <filesToInclude>
+                        target/classes/example.xroad-6.4.wsdl,target/classes/example.xroad-6.1.wsdl
+                    </filesToInclude>
+                    <regex>false</regex>
+                    <token>$END_POINT$</token>
+                    <value>http://localhost:8080/${project.build.finalName}/Endpoint</value>
+                </configuration>
+            </plugin>
         </plugins>
         <defaultGoal>package</defaultGoal>
         <resources>
