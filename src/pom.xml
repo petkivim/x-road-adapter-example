@@ -135,7 +135,7 @@
                 <version>1.5.2</version>
                 <executions>
                     <execution>
-                        <phase>prepare-package</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>replace</goal>
                         </goals>
@@ -143,11 +143,11 @@
                 </executions>
                 <configuration>
                     <filesToInclude>
-                        target/classes/example.xroad-6.4.wsdl,target/classes/example.xroad-6.1.wsdl
+                        target/classes/example.xroad-6.4.wsdl,target/classes/example.xroad-6.1.wsdl,target/${project.build.finalName}/META-INF/context.xml
                     </filesToInclude>
                     <regex>false</regex>
                     <token>$END_POINT$</token>
-                    <value>http://localhost:8080/${project.build.finalName}/Endpoint</value>
+                    <value>${project.build.finalName}</value>
                 </configuration>
             </plugin>
         </plugins>
