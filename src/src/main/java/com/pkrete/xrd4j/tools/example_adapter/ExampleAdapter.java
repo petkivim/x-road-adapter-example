@@ -80,10 +80,6 @@ public class ExampleAdapter extends AbstractAdapterServlet {
             response.getProducer().setNamespacePrefix(this.prefix);
             // Set response data - a random number between 0 and 100
             response.setResponseData(Integer.toString((int) Math.floor(Math.random() * 101)));
-            // Don't add namespace to request or response elements
-            response.setAddNamespaceToRequest(false);
-            response.setForceNamespaceToResponseChildren(false);
-            response.setAddNamespaceToResponse(false);
             // Serialize the response to SOAP
             serializer.serialize(response, request);
             // Return the response - AbstractAdapterServlet takes care of
@@ -117,10 +113,6 @@ public class ExampleAdapter extends AbstractAdapterServlet {
                 response.setErrorMessage(error);
             }
             logger.debug("Message prosessing done!");
-            // Don't add namespace to request or response elements
-            response.setAddNamespaceToRequest(false);
-            response.setForceNamespaceToResponseChildren(false);
-            response.setAddNamespaceToResponse(false);
             // Serialize the response to SOAP
             serializer.serialize(response, request);
             // Return the response - AbstractAdapterServlet takes care of

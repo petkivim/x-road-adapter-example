@@ -7,7 +7,7 @@
                   xmlns:id="http://x-road.eu/xsd/identifiers"
                   name="testService" targetNamespace="http://test.x-road.fi/producer">
     <wsdl:types>
-        <xsd:schema targetNamespace="http://test.x-road.fi/producer">
+        <xsd:schema elementFormDefault="qualified" targetNamespace="http://test.x-road.fi/producer">
             <!-- Import X-Road schema -->
             <xsd:import id="xrd" namespace="http://x-road.eu/xsd/xroad.xsd" schemaLocation="http://x-road.eu/xsd/xroad.xsd"/>
 
