@@ -7,106 +7,18 @@
                   xmlns:id="http://x-road.eu/xsd/identifiers"
                   name="testService" targetNamespace="http://test.x-road.fi/producer">
     <wsdl:types>
-        <!-- Schema for identifiers (reduced) -->
-        <xsd:schema elementFormDefault="qualified"
-                    targetNamespace="http://x-road.eu/xsd/identifiers"
-                    xmlns="http://x-road.eu/xsd/identifiers">
-            <xsd:simpleType name="XRoadObjectType">
-                <xsd:annotation>
-                    <xsd:documentation>Enumeration for X-Road identifier
-                        types that can be used in requests.
-                    </xsd:documentation>
-                </xsd:annotation>
-                <xsd:restriction base="xsd:string">
-                    <xsd:enumeration value="MEMBER" />
-                    <xsd:enumeration value="SUBSYSTEM" />
-                    <xsd:enumeration value="SERVICE" />
-                </xsd:restriction>
-            </xsd:simpleType>
-            <xsd:element name="xRoadInstance" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Identifies the X-Road instance.
-                        This field is applicable to all identifier
-                        types.
-                    </xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="memberClass" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Type of the member (company,
-                        government institution, private person, etc.)
-                    </xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="memberCode" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Code that uniquely identifies a
-                        member of given member type.
-                    </xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="subsystemCode" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Code that uniquely identifies a
-                        subsystem of given X-Road member.
-                    </xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="serviceCode" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Code that uniquely identifies a
-                        service offered by given X-Road member or
-                        subsystem.
-                    </xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="serviceVersion" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:documentation>Version of the service.
-                    </xsd:documentation>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:attribute name="objectType" type="XRoadObjectType" />
-            <xsd:complexType name="XRoadClientIdentifierType">
-                <xsd:sequence>
-                    <xsd:element ref="xRoadInstance" />
-                    <xsd:element ref="memberClass" />
-                    <xsd:element ref="memberCode" />
-                    <xsd:element minOccurs="0" ref="subsystemCode" />
-                </xsd:sequence>
-                <xsd:attribute ref="objectType" use="required" />
-            </xsd:complexType>
-            <xsd:complexType name="XRoadServiceIdentifierType">
-                <xsd:sequence>
-                    <xsd:element ref="xRoadInstance" />
-                    <xsd:element ref="memberClass" />
-                    <xsd:element ref="memberCode" />
-                    <xsd:element minOccurs="0" ref="subsystemCode" />
-                    <xsd:element ref="serviceCode" />
-                    <xsd:element minOccurs="0" ref="serviceVersion" />
-                </xsd:sequence>
-                <xsd:attribute ref="objectType" use="required" />
-            </xsd:complexType>
-        </xsd:schema>
-
-        <!-- Schema for request headers -->
-        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
-                    targetNamespace="http://x-road.eu/xsd/xroad.xsd"
-                    elementFormDefault="qualified">
-
-            <xsd:element name="client" type="id:XRoadClientIdentifierType" />
-            <xsd:element name="service" type="id:XRoadServiceIdentifierType" />
-            <xsd:element name="userId" type="xsd:string" />
-            <xsd:element name="id" type="xsd:string" />
-            <xsd:element name="protocolVersion" type="xsd:string" />
-        </xsd:schema>
-
-        <!-- Schema for requests (reduced) -->
         <xsd:schema targetNamespace="http://test.x-road.fi/producer">
-            <xsd:element name="getRandom" nillable="true" />
+            <!-- Import X-Road schema -->
+            <xsd:import id="xrd" namespace="http://x-road.eu/xsd/xroad.xsd" schemaLocation="http://x-road.eu/xsd/xroad.xsd"/>
+
+            <xsd:element name="getRandom" nillable="true">
+                <xsd:complexType />
+            </xsd:element>
             <xsd:element name="getRandomResponse">
                 <xsd:complexType>
                     <xsd:sequence>
+                        <xsd:element name="request">
+                        </xsd:element>
                         <xsd:element name="response">
                             <xsd:complexType>
                                 <xsd:sequence>
