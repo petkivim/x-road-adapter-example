@@ -20,7 +20,7 @@
     </soapenv:Header>
     <soapenv:Body>
         <prod:getRandom xmlns:prod="http://test.x-road.fi/producer">
-            <prod:request/>
+            <request/>
         </prod:getRandom>   
     </soapenv:Body>
 </soapenv:Envelope>
