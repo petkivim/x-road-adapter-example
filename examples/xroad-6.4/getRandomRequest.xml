@@ -19,6 +19,8 @@
         <xro:protocolVersion>4.0</xro:protocolVersion>
     </soapenv:Header>
     <soapenv:Body>
-        <prod:getRandom xmlns:prod="http://test.x-road.fi/producer"/>
+        <prod:getRandom xmlns:prod="http://test.x-road.fi/producer">
+            <prod:request/>
+        </prod:getRandom>   
     </soapenv:Body>
 </soapenv:Envelope>
