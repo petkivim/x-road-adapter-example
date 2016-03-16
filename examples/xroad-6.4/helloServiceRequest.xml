@@ -20,9 +20,9 @@
     </soapenv:Header>
     <soapenv:Body>
         <prod:helloService xmlns:prod="http://test.x-road.fi/producer">
-            <request>
-                <name>Test</name>
-            </request>
+            <prod:request>
+                <prod:name>Test</prod:name>
+            </prod:request>
         </prod:helloService>
     </soapenv:Body>
 </soapenv:Envelope>
