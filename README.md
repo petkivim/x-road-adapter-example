@@ -57,9 +57,19 @@ In addition, ```wsdl.path``` property's value (located in ```src/main/resources/
 
 #### Docker
 
+Example Adater version 0.0.3 is also available as Docker image.
+
 ```
 docker run -p 8080:8080 petkivim/x-road-adapter-example
 ```
+
+```
+http://localhost:8080/example-adapter-0.0.3/Endpoint
+```
+
+If you’re using Docker on Linux natively, then the web app should now be listening on port 8080 on your Docker daemon host. If http://0.0.0.0:8080 doesn’t resolve, you can also try http://localhost:8080.
+
+On Windows use ```docker-machine ip``` command to get Docker host’s IP address.
 
 ### Access the application
 
