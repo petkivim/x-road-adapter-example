@@ -55,6 +55,12 @@ In addition, ```wsdl.path``` property's value (located in ```src/main/resources/
 * Copy the file ```tomcat.home/webapps``` folder.
 * Start/restart Tomcat.
 
+#### Docker
+
+```
+docker run -p 8080:8080 petkivim/x-road-adapter-example
+```
+
 ### Access the application
 
 After installation (both JAR and WAR) the application is accessible at:
