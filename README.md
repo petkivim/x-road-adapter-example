@@ -10,29 +10,29 @@ Example has support for X-Road version 6.1 and 6.4 message formats.
 
 ### Try It Out
 
-The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-adapter-example/releases/download/example-adapter-0.0.3/example-adapter-0.0.3.jar) the executable jar version (```example-adapter-0.0.3.jar```) and run it: ```java -jar example-adapter-0.0.3.jar```. The application is accessible at:
+The fastest and easiest way to try out the application is to [download](https://github.com/petkivim/x-road-adapter-example/releases/download/example-adapter-0.0.4/example-adapter-0.0.4.jar) the executable jar version (```example-adapter-0.0.4.jar```) and run it: ```java -jar example-adapter-0.0.4.jar```. The application is accessible at:
 
 ```
-http://localhost:8080/example-adapter-0.0.3/Endpoint
+http://localhost:8080/example-adapter-0.0.4/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/example-adapter-0.0.3/Endpoint?wsdl
+http://localhost:8080/example-adapter-0.0.4/Endpoint?wsdl
 ```
 
 ### Docker
 
-Example Adater version 0.0.3 is also available as Docker image.
+Example Adater version 0.0.4 is also available as Docker image.
 
 ```
 docker run -p 8080:8080 petkivim/x-road-adapter-example
 ```
 
-If you’re using Docker on Linux natively, then the web app should now be listening on port 8080 on your Docker daemon host. If http://0.0.0.0:8080 doesn’t resolve, you can also try http://localhost:8080.
+If youâ€™re using Docker on Linux natively, then the web app should now be listening on port 8080 on your Docker daemon host. If http://0.0.0.0:8080 doesnâ€™t resolve, you can also try http://localhost:8080.
 
-On Windows use ```docker-machine ip``` command to get Docker host’s IP address.
+On Windows use ```docker-machine ip``` command to get Docker hostâ€™s IP address.
 
 ### Software Requirements
 
@@ -58,12 +58,12 @@ In addition, ```wsdl.path``` property's value (located in ```src/main/resources/
 
 #### JAR
 
-* Build the project and produce ```example-adapter-0.0.4-SNAPSHOT.jar``` file.
-* Run the application: ```$ java -jar example-adapter-0.0.4-SNAPSHOT.jar```.
+* Build the project and produce ```example-adapter-0.0.5-SNAPSHOT.jar``` file.
+* Run the application: ```$ java -jar example-adapter-0.0.5-SNAPSHOT.jar```.
 
 #### WAR
 
-* Build the project and produce ```example-adapter-0.0.4-SNAPSHOT.war``` file.
+* Build the project and produce ```example-adapter-0.0.5-SNAPSHOT.war``` file.
 * Copy the file ```tomcat.home/webapps``` folder.
 * Start/restart Tomcat.
 
@@ -72,19 +72,19 @@ In addition, ```wsdl.path``` property's value (located in ```src/main/resources/
 After installation (both JAR and WAR) the application is accessible at:
 
 ```
-http://localhost:8080/example-adapter-0.0.4-SNAPSHOT/Endpoint
+http://localhost:8080/example-adapter-0.0.5-SNAPSHOT/Endpoint
 ```
 
 The WSDL description is accessible at:
 
 ```
-http://localhost:8080/example-adapter-0.0.4-SNAPSHOT/Endpoint?wsdl
+http://localhost:8080/example-adapter-0.0.5-SNAPSHOT/Endpoint?wsdl
 ```
 
 **N.B.** If you want to connect the services to X-Road Security Server you must update your server's IP address / host name to the WSDL file. Look for the below line and replace the default URL with your server's IP / host name.
 
 ```
-<soap:address location="http://localhost:8080/example-adapter-0.0.4-SNAPSHOT/Endpoint" />
+<soap:address location="http://localhost:8080/example-adapter-0.0.5-SNAPSHOT/Endpoint" />
 ```
 
 ### Usage
@@ -96,7 +96,7 @@ Calling the service after installation when Tomcat is running.
 SOAP request ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomRequest.xml), [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/getRandomRequest.xml)) can be found in the ```examples``` folder.
 
 ```
-curl -d @getRandom.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/example-adapter-0.0.4-SNAPSHOT/Endpoint
+curl -d @getRandom.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/example-adapter-0.0.5-SNAPSHOT/Endpoint
 ```
 
 Example SOAP response ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/getRandomResponse.xml), [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/getRandomResponse.xml)) can be found in the ```examples``` folder.
@@ -106,7 +106,7 @@ Example SOAP response ([v6.1](https://github.com/petkivim/x-road-adapter-example
 SOAP request ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceRequest.xml),  [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/helloServiceRequest.xml)) can be found in the ```examples``` folder.
 
 ```
-curl -d @helloService.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/example-adapter-0.0.4-SNAPSHOT/Endpoint
+curl -d @helloService.xml --header "Content-Type: text/xml" -X POST http://localhost:8080/example-adapter-0.0.5-SNAPSHOT/Endpoint
 ```
 
 Example SOAP response ([v6.1](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/helloServiceResponse.xml), [v6.4](https://github.com/petkivim/x-road-adapter-example/blob/master/examples/xroad-6.4/helloServiceResponse.xml)) can be found in the ```examples``` folder.
