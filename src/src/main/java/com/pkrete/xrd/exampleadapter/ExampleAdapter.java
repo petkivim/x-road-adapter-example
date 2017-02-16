@@ -31,7 +31,7 @@ import org.slf4j.LoggerFactory;
 public class ExampleAdapter extends AbstractAdapterServlet {
 
     private Properties props;
-    private final static Logger logger = LoggerFactory.getLogger(ExampleAdapter.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExampleAdapter.class);
     private String namespaceSerialize;
     private String namespaceDeserialize;
     private String prefix;
