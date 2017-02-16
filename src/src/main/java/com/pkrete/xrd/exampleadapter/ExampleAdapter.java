@@ -11,6 +11,7 @@ import com.pkrete.xrd4j.server.deserializer.CustomRequestDeserializer;
 import com.pkrete.xrd4j.server.serializer.AbstractServiceResponseSerializer;
 import com.pkrete.xrd4j.server.serializer.ServiceResponseSerializer;
 import java.util.Properties;
+import java.util.Random;
 import javax.xml.soap.Node;
 import javax.xml.soap.SOAPElement;
 import javax.xml.soap.SOAPEnvelope;
@@ -63,10 +64,10 @@ public class ExampleAdapter extends AbstractAdapterServlet {
 
     @Override
     protected ServiceResponse handleRequest(ServiceRequest request) throws SOAPException, XRd4JException {
-        ServiceResponseSerializer serializer = null;
-        ServiceResponse<String, String> response = null;
+        ServiceResponseSerializer serializer;
+        ServiceResponse<String, String> response;
         // Process services by service code
-        if (request.getProducer().getServiceCode().equals("getRandom")) {
+        if ("getRandom".equals(request.getProducer().getServiceCode())) {
             // Process "getRandom" service
             logger.info("Process \"getRandom\" service.");
             // Create a new response serializer that serializes the response
@@ -74,18 +75,18 @@ public class ExampleAdapter extends AbstractAdapterServlet {
             // need a request deserializer
             serializer = new ServiceResponseSerializerImpl();
             // Create a new ServiceResponse object
-            response = new ServiceResponse<String, String>(request.getConsumer(), request.getProducer(), request.getId());
+            response = new ServiceResponse<>(request.getConsumer(), request.getProducer(), request.getId());
             // Set namespace of the SOAP response
             response.getProducer().setNamespaceUrl(this.namespaceSerialize);
             response.getProducer().setNamespacePrefix(this.prefix);
             // Set response data - a random number between 0 and 100
-            response.setResponseData(Integer.toString((int) Math.floor(Math.random() * 101)));
+            response.setResponseData(Integer.toString((int) new Random().nextInt(101)));
             // Serialize the response to SOAP
             serializer.serialize(response, request);
             // Return the response - AbstractAdapterServlet takes care of
             // the rest
             return response;
-        } else if (request.getProducer().getServiceCode().equals("helloService")) {
+        } else if ("helloService".equals(request.getProducer().getServiceCode())) {
             // Process "helloService" service
             logger.info("Process \"helloService\" service.");
             // Create a new response serializer that serializes the response
@@ -97,7 +98,7 @@ public class ExampleAdapter extends AbstractAdapterServlet {
             // Parse the request data from the request
             customDeserializer.deserialize(request, this.namespaceDeserialize);
             // Create a new ServiceResponse object
-            response = new ServiceResponse<String, String>(request.getConsumer(), request.getProducer(), request.getId());
+            response = new ServiceResponse<>(request.getConsumer(), request.getProducer(), request.getId());
             // Set namespace of the SOAP response
             response.getProducer().setNamespaceUrl(this.namespaceSerialize);
             response.getProducer().setNamespacePrefix(this.prefix);
@@ -199,7 +200,7 @@ public class ExampleAdapter extends AbstractAdapterServlet {
             for (int i = 0; i < requestNode.getChildNodes().getLength(); i++) {
                 // Request data is inside of "name" element
                 if (requestNode.getChildNodes().item(i).getNodeType() == Node.ELEMENT_NODE
-                        && requestNode.getChildNodes().item(i).getLocalName().equals("name")) {
+                        && "name".equals(requestNode.getChildNodes().item(i).getLocalName())) {
                     logger.debug("Found \"name\" element.");
                     // "name" element was found - return the text content
                     return requestNode.getChildNodes().item(i).getTextContent();
