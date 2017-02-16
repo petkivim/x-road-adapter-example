@@ -166,7 +166,7 @@
     </wsdl:binding>
     <wsdl:service name="testService">
         <wsdl:port binding="tns:testServiceBinding" name="testServicePort">
-            <soap:address location="http://localhost:8080/$END_POINT$/Endpoint"/>
+            <soap:address location="http://localhost:8080/${project.build.finalName}/Endpoint"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>

@@ -2,7 +2,7 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pkrete.xrd4j.tools</groupId>
+    <groupId>com.pkrete.xrd</groupId>
     <artifactId>example-adapter</artifactId>
     <version>0.0.4-SNAPSHOT</version>
     <name>Example Adapter for X-Road version 6</name>
@@ -138,27 +138,6 @@
                     <charset>utf-8</charset>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>com.google.code.maven-replacer-plugin</groupId>
-                <artifactId>replacer</artifactId>
-                <version>1.5.2</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>replace</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <filesToInclude>
-                        target/classes/example.xroad-6.4.wsdl,target/classes/example.xroad-6.1.wsdl,target/${project.build.finalName}/WEB-INF/classes/example.xroad-6.4.wsdl,target/${project.build.finalName}/WEB-INF/classes/example.xroad-6.1.wsdl
-                    </filesToInclude>
-                    <regex>false</regex>
-                    <token>$END_POINT$</token>
-                    <value>${project.build.finalName}</value>
-                </configuration>
-            </plugin>
         </plugins>
         <defaultGoal>package</defaultGoal>
         <resources>
@@ -192,20 +171,20 @@
         </plugins>
     </reporting>
     <profiles>
-        <profile >
+        <profile>
             <id>xroad-6.1</id>
             <properties>
                 <xrd4j.version>0.0.3</xrd4j.version>
                 <wsdl.path>example.xroad-6.1.wsdl</wsdl.path>
             </properties>
         </profile>
-        <profile >
+        <profile>
             <id>xroad-6.4</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <xrd4j.version>0.0.9</xrd4j.version>
+                <xrd4j.version>0.0.16</xrd4j.version>
                 <wsdl.path>example.xroad-6.4.wsdl</wsdl.path>
             </properties>
         </profile>

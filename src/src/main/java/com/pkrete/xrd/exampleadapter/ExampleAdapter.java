@@ -1,4 +1,4 @@
-package com.pkrete.xrd4j.tools.example_adapter;
+package com.pkrete.xrd.exampleadapter;
 
 import com.pkrete.xrd4j.common.exception.XRd4JException;
 import com.pkrete.xrd4j.common.message.ErrorMessage;
