@@ -1,3 +1,9 @@
+# Unmaintained Repository
+
+Unmaintained repository. Development moved to: https://github.com/vrk-kpa/xrd4j/tree/master/example-adapter
+
+X-Road Adapter Example will now be actively developed by The Finnish Population Register Centre (Väestörekisterikeskus, VRK). The original X-Road Adapter Example codebase here will be kept for archive purposes.
+
 # X-Road Adapter Example
 
 This project provides an example implementation of a web service that's compatible with X-Road version 6.4. The implementation is based on [XRd4J](https://github.com/petkivim/xrd4j) library. The service contains a single class that
